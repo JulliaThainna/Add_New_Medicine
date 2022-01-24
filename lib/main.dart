@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Palette.pinkToWhite,
         ),
-        toolbarHeight: 160,
+        toolbarHeight: 140,
         title: RichText(
           textAlign: TextAlign.left,
           text: const TextSpan(
@@ -94,7 +94,7 @@ class MyCustomForm extends StatelessWidget {
           ),
         ),
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 0),
           child: TextField(
             textAlignVertical: TextAlignVertical.top,
             keyboardType: TextInputType.multiline,
@@ -122,7 +122,7 @@ class MyCustomForm extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Container(
             margin: const EdgeInsets.only(left: 30.0, right: 20.0),
-            child: Text(
+            child: const Text(
               'Medicine Type',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -132,27 +132,54 @@ class MyCustomForm extends StatelessWidget {
           ),
         ),
         Container(
-            alignment: Alignment.center,
-            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            child: SizedBox(
-                height: 150.0,
-                width: double.maxFinite,
-                child: Carousel(
-                  images: const [
-                    NetworkImage(
-                        'https://www.statnews.com/wp-content/uploads/2021/10/molnu-capsule5.jpeg'),
-                    NetworkImage(
-                        'https://images.unsplash.com/photo-1573883429746-084be9b5cfca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGlsbHN8ZW58MHx8MHx8&w=1000&q=80'),
-                    ExactAssetImage("assets/images/LaunchImage.jpg")
-                  ],
-                  dotSize: 4.0,
-                  dotSpacing: 15.0,
-                  dotColor: Palette.blackToWhite.shade900,
-                  indicatorBgPadding: 5.0,
-                  dotBgColor: Palette.pinkToWhite,
-                  borderRadius: true,
-                  autoplay: false,
-                )))
+          alignment: Alignment.center,
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          child: SizedBox(
+            height: 130.0,
+            width: double.maxFinite,
+            child: Carousel(
+              images: const [
+                NetworkImage(
+                    'https://www.statnews.com/wp-content/uploads/2021/10/molnu-capsule5.jpeg'),
+                NetworkImage(
+                    'https://images.unsplash.com/photo-1573883429746-084be9b5cfca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGlsbHN8ZW58MHx8MHx8&w=1000&q=80'),
+                ExactAssetImage("assets/images/LaunchImage.jpg")
+              ],
+              dotSize: 4.0,
+              dotSpacing: 15.0,
+              dotColor: Palette.blackToWhite.shade900,
+              indicatorBgPadding: 5.0,
+              dotBgColor: Palette.pinkToWhite,
+              borderRadius: true,
+              autoplay: false,
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 38),
+          child: TextField(
+            textAlignVertical: TextAlignVertical.top,
+            keyboardType: TextInputType.number,
+            inputFormatters: [
+              FilteringTextInputFormatter.digitsOnly,
+            ],
+            maxLength: 4,
+            decoration: const InputDecoration(
+              counterText: "",
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                borderSide: BorderSide.none,
+              ),
+              hintText: 'Enter the medicine quantity',
+              labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+              labelText: 'Quantity\n\n',
+              alignLabelWithHint: false,
+              fillColor: Color(0xffe6e6e6),
+              filled: true,
+            ),
+          ),
+        ),
       ],
     );
   }
