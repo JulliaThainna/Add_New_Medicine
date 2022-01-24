@@ -98,12 +98,15 @@ class MyCustomForm extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
           child: TextField(
             textAlignVertical: TextAlignVertical.top,
+            keyboardType: TextInputType.multiline,
+            maxLines: 3,
+            maxLength: 300,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide.none,
               ),
-              contentPadding: EdgeInsetsDirectional.only(bottom: 100, start: 10, top: 20),
+              //contentPadding: EdgeInsetsDirectional.only(bottom: 100, start: 10, top: 20),
               hintText: 'Enter the medicine description',
               labelStyle: TextStyle(fontWeight: FontWeight.bold),
               floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -112,9 +115,12 @@ class MyCustomForm extends StatelessWidget {
               fillColor: Color(0xffe6e6e6),
               filled: true,
               isDense: true, 
+              
             ),
           ),
         ),
+
+
       ],
     );
     
