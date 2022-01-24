@@ -2,8 +2,6 @@
 
 Run with flutter _run --no-sound-null-safety_ on terminal or go to the settings of your IDE and search for "flutter run additional args" and add _--no-sound-null-safety_
 
-A new Flutter project.
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
