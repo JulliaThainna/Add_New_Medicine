@@ -70,9 +70,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class MyCustomForm extends StatelessWidget {
+
+
+class MyCustomForm extends StatefulWidget {
   const MyCustomForm({Key? key}) : super(key: key);
 
+  @override
+  State<MyCustomForm> createState() => _MyCustomFormState();
+}
+
+class _MyCustomFormState extends State<MyCustomForm> {
+  String dropdownvalue = 'Item 1';
+  var items = ['Item 1', 'Item 2', 'Item 3'];
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -198,26 +207,22 @@ class MyCustomForm extends StatelessWidget {
                       ]),
                     ),
                     Expanded(
-                        child: Container(
-                            decoration: BoxDecoration(
-                                color: const Color(0xffef6f86),
-                                borderRadius: BorderRadius.circular(30)),
-                            child: DropdownButton<String>(
-                              underline: Container(
-                                height: 0,
-                              ),
-                              style: const TextStyle(fontFamily: 'Montserrat', color: Color(0xff646464)),
-                              hint: const Text('Select a measure'),
-                              dropdownColor: Palette.blackToWhite.shade800,
-                              items: <String>['A', 'B', 'C', 'D']
-                                  .map((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
+                        child: DropdownButton(
+                            value: dropdownvalue,
+                            icon: const Icon(Icons.keyboard_arrow_down),
+                            items: items.map((String items){
+                                return DropdownMenuItem(
+                                  value: items,
+                                  child: Text(items),
                                 );
-                              }).toList(),
-                              onChanged: (_) {},
-                            ))),
+                            }).toList(),
+                            onChanged: (String? newValue){
+                                setState(() {
+                                  dropdownvalue = newValue!;
+                                });
+                            },
+                          )
+                    )
                   ]),
             ),
           ),
