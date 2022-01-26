@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+<<<<<<< HEAD
 import 'package:intl/intl.dart';
+=======
+>>>>>>> parent of aec6bf7 (Starting time shedule fields)
 import 'pallete.dart';
 
 void main() {
@@ -10,7 +13,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,6 +40,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,21 +52,20 @@ class _MyHomePageState extends State<MyHomePage> {
         title: RichText(
           textAlign: TextAlign.left,
           text: const TextSpan(
-            text: 'Add New Medicine',
-            style: TextStyle(
-                fontSize: 26,
-                fontFamily: 'Montserrat',
-                height: 1.5,
-                color: Colors.white),
-            children: <TextSpan>[
-              TextSpan(
-                text: '\nAnd set the infos',
-                style: TextStyle(
-                  fontSize: 14,
+              text: 'Add New Medicine',
+              style: TextStyle(
+                  fontSize: 26,
+                  fontFamily: 'Montserrat',
+                  height: 1.5,
+                  color: Colors.white),
+              children: <TextSpan>[
+                TextSpan(
+                  text: '\nAnd set the infos',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
                 ),
-              ),
-            ],
-          ),
+              ]),
         ),
       ),
       resizeToAvoidBottomInset: false,
@@ -70,6 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
 
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({Key? key}) : super(key: key);
@@ -99,7 +104,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        //MEDICINE NAME FIELD
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 38),
           child: TextField(
@@ -109,11 +113,16 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 borderSide: BorderSide.none,
               ),
               hintStyle: TextStyle(fontSize: 14),
+<<<<<<< HEAD
               hintText: 'Enter medicine name',
               labelStyle: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                   color: Color(0xff666666)),
+=======
+              hintText: 'Enter the medicine name',
+              labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+>>>>>>> parent of aec6bf7 (Starting time shedule fields)
               floatingLabelBehavior: FloatingLabelBehavior.always,
               labelText: 'Medicine Name\n\n',
               alignLabelWithHint: false,
@@ -122,8 +131,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
             ),
           ),
         ),
-
-        //MEDICINE DESCRIPTION FIELD
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 0),
           child: TextField(
@@ -133,17 +140,22 @@ class _MyCustomFormState extends State<MyCustomForm> {
             maxLength: 300,
             decoration: InputDecoration(
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(30)),
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 borderSide: BorderSide.none,
               ),
               contentPadding:
                   EdgeInsetsDirectional.only(bottom: 0, start: 10, top: 50),
               hintStyle: TextStyle(fontSize: 14),
+<<<<<<< HEAD
               hintText: 'Enter medicine description',
               labelStyle: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                   color: Color(0xff666666)),
+=======
+              hintText: 'Enter the medicine description',
+              labelStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+>>>>>>> parent of aec6bf7 (Starting time shedule fields)
               floatingLabelBehavior: FloatingLabelBehavior.always,
               labelText: 'Description\n\n',
               alignLabelWithHint: false,
@@ -153,17 +165,15 @@ class _MyCustomFormState extends State<MyCustomForm> {
             ),
           ),
         ),
-
-        //CAROUSEL
         Align(
           alignment: Alignment.centerLeft,
           child: Container(
-            margin: const EdgeInsets.only(left: 30, right: 20.0),
+            margin: const EdgeInsets.only(left: 30.0, right: 20.0),
             child: const Text(
               'Medicine Type',
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Color(0xff666666),
+                  color: Color(0xff646464),
                   fontSize: 10.5),
             ),
           ),
@@ -171,7 +181,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
         Expanded(
           child: Container(
             alignment: Alignment.center,
-            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
             child: SizedBox(
               height: 130.0,
               width: double.maxFinite,
@@ -190,18 +200,16 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 dotBgColor: Palette.pinkToWhite,
                 borderRadius: true,
                 autoplay: false,
-                //radius: const Radius.circular(30),
               ),
             ),
           ),
         ),
-
-        //QUANTITY FIELD + DROPDOWN BUTTON
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
             child: IntrinsicHeight(
               child: Row(
+<<<<<<< HEAD
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
@@ -270,9 +278,40 @@ class _MyCustomFormState extends State<MyCustomForm> {
                               dropdownValueQ = newValue!;
                             });
                           },
+=======
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      child: Column(children: [
+                        TextField(
+                          textAlignVertical: TextAlignVertical.top,
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                          maxLength: 4,
+                          decoration: const InputDecoration(
+                            counterText: "",
+                            border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30.0)),
+                              borderSide: BorderSide.none,
+                            ),
+                            hintStyle: TextStyle(fontSize: 14),
+                            hintText: 'Enter the quantity',
+                            labelStyle: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 14),
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
+                            labelText: 'Quantity\n\n',
+                            alignLabelWithHint: false,
+                            fillColor: Color(0xffe6e6e6),
+                            filled: true,
+                          ),
+>>>>>>> parent of aec6bf7 (Starting time shedule fields)
                         ),
-                      ),
+                      ]),
                     ),
+<<<<<<< HEAD
                   ),
                 ],
               ),
@@ -475,6 +514,26 @@ class _MyCustomFormState extends State<MyCustomForm> {
                   ),
                 ],
               ),
+=======
+                    Expanded(
+                        child: DropdownButton(
+                            value: dropdownvalue,
+                            icon: const Icon(Icons.keyboard_arrow_down),
+                            items: items.map((String items){
+                                return DropdownMenuItem(
+                                  value: items,
+                                  child: Text(items),
+                                );
+                            }).toList(),
+                            onChanged: (String? newValue){
+                                setState(() {
+                                  dropdownvalue = newValue!;
+                                });
+                            },
+                          )
+                    )
+                  ]),
+>>>>>>> parent of aec6bf7 (Starting time shedule fields)
             ),
           ),
         ),
@@ -499,3 +558,4 @@ class _MyCustomFormState extends State<MyCustomForm> {
     );
   }
 }
+
