@@ -80,12 +80,19 @@ class MyCustomForm extends StatefulWidget {
 
 class _MyCustomFormState extends State<MyCustomForm> {
   TextEditingController timeinput = TextEditingController();
+<<<<<<< HEAD
   TextEditingController dateinput = TextEditingController();
 
   @override
   void initState() {
     timeinput.text = "";
     dateinput.text = "";
+=======
+
+  @override
+  void initState() {
+    timeinput.text = ""; //set the initial value of text field
+>>>>>>> 69201875d3edcdeb0793654e0d236b66ba2bba24
     super.initState();
   }
 
@@ -372,7 +379,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
           ),
         ),
 
+<<<<<<< HEAD
         //TIME AND DATE FIELDS
+=======
+        //TIME AND DATA FIELDS
+>>>>>>> 69201875d3edcdeb0793654e0d236b66ba2bba24
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
@@ -383,13 +394,20 @@ class _MyCustomFormState extends State<MyCustomForm> {
                   Expanded(
                     child: Column(children: [
                       TextField(
+<<<<<<< HEAD
                         controller: timeinput,
                         decoration: const InputDecoration(
+=======
+                        controller:
+                            timeinput, //editing controller of this TextField
+                        decoration: const InputDecoration(
+                          //icon of text field
+>>>>>>> 69201875d3edcdeb0793654e0d236b66ba2bba24
                           labelText: "Time\n\n",
                           counterText: "",
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(30)),
-                            borderSide: BorderSide.none,
+                            borderSide: BorderSide.none, //label text of field
                           ),
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -427,6 +445,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                   ),
                   Expanded(
                     child: Padding(
+<<<<<<< HEAD
                         padding: const EdgeInsetsDirectional.only(
                             bottom: 10, start: 10, top: 0, end: 0),
                         child: TextField(
@@ -472,6 +491,43 @@ class _MyCustomFormState extends State<MyCustomForm> {
                             }
                           },
                         )),
+=======
+                      padding: const EdgeInsetsDirectional.only(
+                          bottom: 10, start: 10, top: 0, end: 0),
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                            color: const Color(0xffef6f86),
+                            borderRadius: BorderRadius.circular(30)),
+                        child: DropdownButton(
+                          style: const TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 14,
+                            color: Color(0xffffffff),
+                          ),
+                          underline: Container(
+                            height: 0,
+                          ),
+                          dropdownColor: Palette.pinkToWhite,
+                          borderRadius: BorderRadius.circular(30),
+                          isExpanded: true,
+                          value: dropdownValueQ,
+                          icon: const Icon(Icons.keyboard_arrow_down),
+                          iconEnabledColor: const Color(0xffffffff),
+                          items: itemsQ.map((String itemsQ) {
+                            return DropdownMenuItem(
+                              value: itemsQ,
+                              child: Center(child: Text(itemsQ)),
+                            );
+                          }).toList(),
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              dropdownValueQ = newValue!;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+>>>>>>> 69201875d3edcdeb0793654e0d236b66ba2bba24
                   ),
                 ],
               ),
